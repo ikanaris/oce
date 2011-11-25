@@ -1,0 +1,16 @@
+
+	GG : Fevrier 1998
+	     Livraison des polices MFT chinoises TABHZ1,...,TABHZ6
+	     obtenues a partir de l'utilitaire TestMFT/pol2MFT et des
+	     polices symboles TABSYxxx.POL livrees par Ba Thong PHAN.
+
+	GG : Septembre 1998
+
+
+		PRO15231 Regeneration des polices
+		Courier,Courier-Bold.mft,Helvetica-BoldOblique.mft
+		Times-BoldItalic.mft qui etaient fausses
+
+		PRO15231 Regeneration des polices
+		Symbol,Utopia-Bold,Utopia-BoldItalic,Utopia-Italic,Utopia-Regular
+
