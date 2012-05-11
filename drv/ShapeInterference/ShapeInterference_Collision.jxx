@@ -1,0 +1,6 @@
+#ifndef _TopoDS_Shape_HeaderFile
+#include <TopoDS_Shape.hxx>
+#endif
+#ifndef _ShapeInterference_Collision_HeaderFile
+#include <ShapeInterference_Collision.hxx>
+#endif

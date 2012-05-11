@@ -1,0 +1,12 @@
+#ifndef _ShapeInterference_InterfObj_HeaderFile
+#include <ShapeInterference_InterfObj.hxx>
+#endif
+#ifndef _ShapeInterference_SequenceOfInterfObj_HeaderFile
+#include <ShapeInterference_SequenceOfInterfObj.hxx>
+#endif
+#ifndef _TopoDS_Shape_HeaderFile
+#include <TopoDS_Shape.hxx>
+#endif
+#ifndef _ShapeInterference_Interference_HeaderFile
+#include <ShapeInterference_Interference.hxx>
+#endif

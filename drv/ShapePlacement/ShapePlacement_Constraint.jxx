@@ -1,0 +1,9 @@
+#ifndef _TopoDS_Shape_HeaderFile
+#include <TopoDS_Shape.hxx>
+#endif
+#ifndef _ShapePlacement_Equation_HeaderFile
+#include <ShapePlacement_Equation.hxx>
+#endif
+#ifndef _ShapePlacement_Constraint_HeaderFile
+#include <ShapePlacement_Constraint.hxx>
+#endif

@@ -1,0 +1,7 @@
+#ifndef _TopoDS_Shape_HeaderFile
+#include <TopoDS_Shape.hxx>
+#endif
+#ifndef _ShapeInterference_Interference_HeaderFile
+#include <ShapeInterference_Interference.hxx>
+#endif
+#include <ShapeInterference.hxx>
