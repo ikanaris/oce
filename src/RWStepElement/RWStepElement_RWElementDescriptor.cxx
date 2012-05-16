@@ -48,9 +48,9 @@ void RWStepElement_RWElementDescriptor::ReadStep (const Handle(StepData_StepRead
   StepElement_ElementOrder aTopologyOrder = StepElement_Linear;
   if (data->ParamType (num, 1) == Interface_ParamEnum) {
     Standard_CString text = data->ParamCValue(num, 1);
-    if      (strcmp(text, ".LINEAR.")) aTopologyOrder = StepElement_Linear;
-    else if (strcmp(text, ".QUADRATIC.")) aTopologyOrder = StepElement_Quadratic;
-    else if (strcmp(text, ".CUBIC.")) aTopologyOrder = StepElement_Cubic;
+    if      (!strcmp(text, ".LINEAR.")) aTopologyOrder = StepElement_Linear;
+    else if (!strcmp(text, ".QUADRATIC.")) aTopologyOrder = StepElement_Quadratic;
+    else if (!strcmp(text, ".CUBIC.")) aTopologyOrder = StepElement_Cubic;
     else ach->AddFail("Parameter #1 (topology_order) has not allowed value");
   }
   else ach->AddFail("Parameter #1 (topology_order) is not enumeration");
