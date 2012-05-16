@@ -422,7 +422,8 @@
     break;
 
   default:
-    break;
+    return Standard_False;
+	break;
   }
   //
   Standard_Real epsAng = 1.e-8;
