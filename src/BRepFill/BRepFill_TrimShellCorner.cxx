@@ -352,7 +352,7 @@ void BRepFill_TrimShellCorner::Perform()
     Standard_Integer anIndex1 = aDS.ShapeIndex(aF1, 1);
     Standard_Integer anIndex2 = aDS.ShapeIndex(aF2, 2);
 
-    if((anIndex1 == 0) || (anIndex1 == 0))
+    if((anIndex1 == 0) || (anIndex2 == 0))
       continue;
     Standard_Integer i = 0;
 
@@ -2252,4 +2252,3 @@ static Standard_Boolean ChooseSection(const TopoDS_Shape& Comp,
   return Standard_False;
   //end of simplest case
 }
-
