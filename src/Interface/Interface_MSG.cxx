@@ -135,7 +135,7 @@ Interface_MSG::operator Standard_CString () const
 Standard_Integer  Interface_MSG::Read (Standard_IStream& S)
 {
   Standard_Integer i,nb = 0;
-  char buf[200], key[200];
+  char buf[201], key[201];
   buf[0] = '\0';
   while (S.getline (buf,200)) {
     if (buf[0] == '@' && buf[1] == '@') continue;
