@@ -93,26 +93,26 @@ Standard_Boolean  IGESGraph_ToolDrawingUnits::OwnCorrect
   Standard_CString unm = "";
   if (!ent->Unit().IsNull()) unm  = ent->Unit()->ToCString();
   switch (unf) {
-    case  1 : if (strcmp(unm,"IN") && strcmp(unm,"INCH"))
+    case  1 : if (!strcmp(unm,"IN") || !strcmp(unm,"INCH"))
       name = new TCollection_HAsciiString ("IN");  break;
-    case  2 : if (strcmp(unm,"MM"))
+    case  2 : if (!strcmp(unm,"MM"))
       name = new TCollection_HAsciiString ("MM");  break;
     case  3 : break;  // nom libre
-    case  4 : if (strcmp(unm,"FT"))
+    case  4 : if (!strcmp(unm,"FT"))
       name = new TCollection_HAsciiString ("FT");  break;
-    case  5 : if (strcmp(unm,"MI"))
+    case  5 : if (!strcmp(unm,"MI"))
       name = new TCollection_HAsciiString ("MI");  break;
-    case  6 : if (strcmp(unm,"M"))
+    case  6 : if (!strcmp(unm,"M"))
       name = new TCollection_HAsciiString ("M");   break;
-    case  7 : if (strcmp(unm,"KM"))
+    case  7 : if (!strcmp(unm,"KM"))
       name = new TCollection_HAsciiString ("KM");  break;
-    case  8 : if (strcmp(unm,"MIL"))
+    case  8 : if (!strcmp(unm,"MIL"))
       name = new TCollection_HAsciiString ("MIL"); break;
-    case  9 : if (strcmp(unm,"UM"))
+    case  9 : if (!strcmp(unm,"UM"))
       name = new TCollection_HAsciiString ("UM");  break;
-    case 10 : if (strcmp(unm,"CM"))
+    case 10 : if (!strcmp(unm,"CM"))
       name = new TCollection_HAsciiString ("CM");  break;
-    case 11 : if (strcmp(unm,"UIN"))
+    case 11 : if (!strcmp(unm,"UIN"))
       name = new TCollection_HAsciiString ("UIN"); break;
     default : break;    // on ne peut rien faire ... ?
   }
