@@ -2038,7 +2038,7 @@ void ProcessAloneStickVertices(const Standard_Integer nF1,
 	const IntTools_Curve& aIC=aBC.Curve();
 	//Handle(Geom_Curve) aC3D=aIC.Curve(); //DEB
 	aTypeC=aIC.Type();
-	if (!(aTypeC==GeomAbs_BezierCurve || GeomAbs_BSplineCurve)) {
+	if (!(aTypeC==GeomAbs_BezierCurve || aTypeC==GeomAbs_BSplineCurve)) {
 	  continue;
 	}
 	//
@@ -2301,7 +2301,7 @@ Standard_Boolean IsPairFound(const Standard_Integer nF1,
     }
   }
   // -- 6841: test 2d intersection any way, but update vertex only
-  if((!bSearchInter && pvVrtIndex != 0)) {
+  if(!bSearchInter && (pvVrtIndex != 0)) {
     Standard_Boolean OnFirst = (myDS->Rank(nE) == 1);
     TopoDS_Edge aE = TopoDS::Edge(myDS->Shape(nE));
     TopoDS_Face aF  = (OnFirst) ? TopoDS::Face(myDS->Shape(nF1)) : TopoDS::Face(myDS->Shape(nF2));
