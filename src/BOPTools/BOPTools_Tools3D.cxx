@@ -511,7 +511,7 @@ Standard_Boolean BOPTools_Tools3D::DoSplitSEAMOnFace(const TopoDS_Edge& theSplit
   //
   aFlag=aContext->ProjectPointOnEdge(aP, aEF2, aT2);
   //
-  aFlag=BOPTools_Tools2D::EdgeTangent(aEF2, aT2, aV2);
+  aFlag&=BOPTools_Tools2D::EdgeTangent(aEF2, aT2, aV2);
   if(!aFlag) {
     return Standard_False;
   }
