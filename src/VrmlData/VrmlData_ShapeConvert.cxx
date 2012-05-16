@@ -257,7 +257,7 @@ void VrmlData_ShapeConvert::Convert (const Standard_Boolean theExtractFaces,
                   TColgp_Array1OfPnt arrNodes(1, nbNodes);
                   TColStd_Array1OfReal arrUVNodes(1, nbNodes);
 
-                  for(i = 1; i <= nbNodes; i++) {
+                  for(int i = 1; i <= nbNodes; i++) {
                     arrUVNodes(i) = aPrs->Value(aPrs->Lower() + i - 1);
                     arrNodes(i) = aCurve.Value(arrUVNodes(i));
                   }
@@ -276,7 +276,7 @@ void VrmlData_ShapeConvert::Convert (const Standard_Boolean theExtractFaces,
                 
                   TColgp_Array1OfPnt arrNodes(1, nbNodes);
                   TColStd_Array1OfReal arrUVNodes(1, nbNodes);
-                  for (i = 1; i <= nbNodes; i++) {
+                  for (int i = 1; i <= nbNodes; i++) {
                     arrNodes(i) = TD.Value(i);
                     arrUVNodes(i) = TD.Parameter(i);
                   }
