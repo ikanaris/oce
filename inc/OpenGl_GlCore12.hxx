@@ -34,6 +34,8 @@
 // include glext.h provided by Khronos group
 #if defined(__APPLE__) && !defined(MACOSX_USE_GLX)
   #include <OpenGL/glext.h>
+#elif defined(WIN32) && defined(_MSC_VER) 
+  #include <win32/glext.h>
 #else
   #include <GL/glext.h>
 #endif
