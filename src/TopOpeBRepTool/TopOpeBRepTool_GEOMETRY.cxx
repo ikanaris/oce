@@ -74,8 +74,7 @@ Standard_EXPORT Standard_Boolean FUN_tool_IsUViso(const Handle(Geom2d_Curve)& PC
 Standard_EXPORT gp_Dir FUN_tool_dirC(const Standard_Real par,const Handle(Geom_Curve)& C)
 {
   gp_Pnt p; gp_Vec tgE; C->D1(par,p,tgE); 
-  gp_Dir dirC(tgE);
-  return dirC;
+  return gp_Dir(tgE);
 }
 
 // ----------------------------------------------------------------------
@@ -125,8 +124,8 @@ Standard_EXPORT gp_Dir FUN_tool_ngS(const gp_Pnt2d& p2d,const Handle(Geom_Surfac
       Standard_Boolean apex = nullx && (Abs(p2d.Y()) < toluv);
       if (apex) {
 	const gp_Dir& axis = GS.Cone().Axis().Direction();
-	gp_Vec ng(axis); ng.Reverse();
-	return ng;
+    gp_Vec ng(axis); ng.Reverse();
+    return ng;
       }
       else if (du < tol) {
 	Standard_Real vf = GS.FirstVParameter();
@@ -137,8 +136,7 @@ Standard_EXPORT gp_Dir FUN_tool_ngS(const gp_Pnt2d& p2d,const Handle(Geom_Surfac
 	if (onvf) y += 1.;
 	else      y -= 1.;
 	S->D1(x,y,p,d1u,d1v); 	
-	gp_Vec ng = d1u^d1v;
-	return ng;
+	return d1u^d1v;
       }
     }
     if (ST == GeomAbs_Sphere) {
@@ -165,10 +163,7 @@ Standard_EXPORT gp_Dir FUN_tool_ngS(const gp_Pnt2d& p2d,const Handle(Geom_Surfac
     return gp_Dir(0,0,1);
   }
 
-  gp_Dir udir(d1u);
-  gp_Dir vdir(d1v);
-  gp_Dir ngS(udir^vdir);
-  return ngS;
+  return gp_Dir(d1u)^gp_Dir(d1v);
 }
 
 // ----------------------------------------------------------------------
@@ -176,8 +171,7 @@ Standard_EXPORT Standard_Boolean FUN_tool_line(const Handle(Geom_Curve)& C3d)
 {
   Handle(Geom_Curve) C = TopOpeBRepTool_ShapeTool::BASISCURVE(C3d);
   GeomAdaptor_Curve GC(C);
-  Standard_Boolean line = (GC.GetType() == GeomAbs_Line);
-  return line;
+  return (Standard_Boolean)(GC.GetType() == GeomAbs_Line);
 }
 
 // ----------------------------------------------------------------------
@@ -199,8 +193,7 @@ Standard_EXPORT Standard_Boolean FUN_tool_quad(const Handle(Geom_Curve)& C3d)
   if (C.IsNull()) return Standard_False;
   GeomAdaptor_Curve GC(C);
   GeomAbs_CurveType CT = GC.GetType();
-  Standard_Boolean quad = FUN_quadCT(CT);
-  return quad;
+  return FUN_quadCT(CT);
 }
 
 // ----------------------------------------------------------------------
@@ -259,8 +252,7 @@ Standard_EXPORT Standard_Boolean FUN_tool_closed(const Handle(Geom_Surface)& S,
   if (uclosed) uperiod = S->UPeriod();
   vclosed = S->IsVClosed(); if (vclosed) vclosed = S->IsVPeriodic(); 
   if (vclosed) vperiod = S->VPeriod();
-  Standard_Boolean closed = uclosed || vclosed;
-  return closed;
+  return (Standard_Boolean)(uclosed || vclosed);
 }
 
 // ----------------------------------------------------------------------
