@@ -159,7 +159,7 @@ static int BUC60609(Draw_Interpretor& di, Standard_Integer argc, const char ** a
   istream in(&fic);
   if (!fic.open(file1,ios::in)) {
     di << "Cannot open file for reading : " << file1 << "\n";
-    delete file1;
+    delete [] file1;
     return(-1);
   }
 
@@ -174,7 +174,7 @@ static int BUC60609(Draw_Interpretor& di, Standard_Integer argc, const char ** a
       S.Read(theShape,in);
     }else{
       di << "Wrong entity type in " << file1 << "\n";
-      delete file1;
+      delete [] file1;
       return(-1);
     }
   }
@@ -220,13 +220,13 @@ static int BUC60609(Draw_Interpretor& di, Standard_Integer argc, const char ** a
       di << "Input U:   " << "\n";
 //      cin >> U;
 //      if(!cin) {
-	delete file1;
+  	delete [] file1;
 	return(0);
 //      }
       di << "Input V:   " << "\n";
 //      cin >> V;
 //      if(!cin) {
-	delete file1;
+	delete [] file1;
 	return(0);
 //      }
       
@@ -422,7 +422,7 @@ static int BUC60585(Draw_Interpretor& di, Standard_Integer argc, const char ** a
   istream in(&fic);
   if (!fic.open(filename,ios::in)) {
     di << "Cannot open file for reading : " << filename << "\n";
-    delete filename;
+    delete [] filename;
     return -1;
   }
   
@@ -470,7 +470,7 @@ static int BUC60585(Draw_Interpretor& di, Standard_Integer argc, const char ** a
       Sec.Build();
       if(!Sec.IsDone()){
 	di << "Error performing intersection: not done." << "\n";
-	delete filename;
+	delete [] filename;
 	return -1;
       }
       res = Sec.Shape();
@@ -480,7 +480,7 @@ static int BUC60585(Draw_Interpretor& di, Standard_Integer argc, const char ** a
       Sec.Build();
       if(!Sec.IsDone()){
 	di << "Error performing intersection: not done." << "\n";
-	delete filename;
+	delete [] filename;
 	return -1;
       }
       res = Sec.Shape();
@@ -489,7 +489,7 @@ static int BUC60585(Draw_Interpretor& di, Standard_Integer argc, const char ** a
   }catch(Standard_Failure){
     Handle(Standard_Failure) error = Standard_Failure::Caught();
     di << "Error performing intersection: not done." << "\n";
-    delete filename;
+    delete [] filename;
     return -1;
   }
   
@@ -506,7 +506,7 @@ static int BUC60585(Draw_Interpretor& di, Standard_Integer argc, const char ** a
   
   di << "Done" << "\n";
 
-  delete filename;
+  delete [] filename;
   
   return 0;
 }
@@ -592,8 +592,8 @@ static int BUC60547(Draw_Interpretor& di, Standard_Integer argc, const char ** a
 
   BRepTools::Write(Com,FileName); 
 
-  delete Ch;
-  delete FileName;
+  delete [] Ch;
+  delete [] FileName;
   
   return 0;
 }
