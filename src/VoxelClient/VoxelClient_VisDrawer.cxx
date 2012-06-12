@@ -385,7 +385,7 @@ static void getNormal(gp_Dir& normal)
 // Normal 2 VoxelDirection converter
 static VoxelDirection getVoxelDirection(const gp_Dir& viewnormal)
 {
-    VoxelDirection vdir;
+    VoxelDirection vdir = 0.;
 	Standard_Real fabsviewnormalx = fabs(viewnormal.X());
 	Standard_Real fabsviewnormaly = fabs(viewnormal.Y());
 	Standard_Real fabsviewnormalz = fabs(viewnormal.Z());
