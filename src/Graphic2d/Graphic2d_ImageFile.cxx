@@ -401,7 +401,7 @@ TCollection_AsciiString ext = Path.Extension ();
                 if( !Reopen ) aFile.Close ();
                 return Result;
         }
-XWDFileHeader *pheader;
+XWDFileHeader *pheader = NULL;
 
         pheader = (XWDFileHeader *) malloc (sizeof (XWDFileHeader));
         if (pheader == NULL) {
